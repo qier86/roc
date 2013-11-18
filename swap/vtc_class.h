@@ -12,12 +12,14 @@
 #define __LINUX_VTC_CLASS_H_INCLUDED
 
 enum debug_type{
-	VTC_ERR = 1 << 0,
-	VTC_WAR = 1 << 1,
-	VTC_INF = 1 << 2,
-	VTC_DAT = 1 << 3,
-	VTC_DBG = 1 << 4,
+	VTC_ERR = 0,
+	VTC_WAR = 1,
+	VTC_INF = 2,
+	VTC_DAT = 3,
+	VTC_DBG = 4,
+	VTC_DEBUG_TYPE_COUNT
 };
+
 
 #define VTC_DEBUG_DEFAULT  (VTC_ERR | VTC_WAR)
 
@@ -27,4 +29,5 @@ struct vtc_class_dev {
 	struct list_head node;
 	struct device *dev;
 };
+
 #endif
