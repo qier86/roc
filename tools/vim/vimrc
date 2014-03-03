@@ -85,7 +85,7 @@ function! AutoLoadCTagsAndCScope()
         let i = i + 1
     endwhile
 endf
-nmap <F7> :call AutoLoadCTagsAndCScope()<CR>
+nmap lct :call AutoLoadCTagsAndCScope()<CR>
 "call AutoLoadCTagsAndCScope()
 
 "cscope setting
@@ -128,3 +128,11 @@ let g:miniBufExplMapWindowNavArrows = 1
 
 filetype plugin indent on
 set completeopt=longest,menu
+
+"custom copy' n' parste
+"copy the current visual selection to ~/.vbuf
+vmap <C-c> :w! ~/.vbuf<CR>
+"copy the current line to the buffer file
+nmap <C-c> :.w! ~/.vbuf<CR>
+"paste the contens of the buffer file
+nmap <C-v> :r ~/.vbuf<CR>
